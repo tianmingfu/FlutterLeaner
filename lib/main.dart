@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/NewRoute.dart';
+import 'package:flutter_app/TipRoute.dart';
+import 'package:english_words/english_words.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,13 +13,21 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      initialRoute: "/",
       theme: ThemeData(
-
         primarySwatch: Colors.blue,
-
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+//      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      //注册路由表
+      routes: {
+        "new_page":(context) => NewRoute(),
+        "/":(context) =>  MyHomePage(title: 'Flutter Demo Home Page'),
+        "tip2":(context) {
+          return TipRoute(text: ModalRoute.of(context).settings.arguments);
+        },
+        //...//省略其他路由注册信息
+      }
     );
   }
 }
@@ -67,12 +77,14 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text("open new route"),
               textColor: Colors.blue,
               onPressed: (){
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) {
-                      return NewRoute();
-                    }));
+                Navigator.pushNamed(context, "new_page");
+//                Navigator.push(context,
+//                    MaterialPageRoute(builder: (context) {
+//                      return NewRoute();
+//                    }));
               },
             ),
+            RandomwordsWidget(),
           ],
         ),
       ),
@@ -83,4 +95,18 @@ class _MyHomePageState extends State<MyHomePage> {
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
+}
+
+class RandomwordsWidget extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+
+  final wordPair = new WordPair.random();
+  return Padding(
+    padding: const EdgeInsets.all(8.0),
+    child: new Text(wordPair.toString()),
+  );
+  }
+  
 }
