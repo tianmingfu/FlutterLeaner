@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/TapBoxAState.dart';
 import 'package:flutter_app/TipRoute.dart';
+
+import 'ParentWidget.dart';
+import 'ParentWidgetC.dart';
 
 class NewRoute extends StatelessWidget {
   
@@ -29,6 +33,10 @@ class NewRoute extends StatelessWidget {
                 },
                 child: Text("打开提示页"),
                 ),
+              TapboxA(),
+              Text(""),
+//              ParentWidget(),
+              ParentWidgetC(),
             ],
           ),
         ),
