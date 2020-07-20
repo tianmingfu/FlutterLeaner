@@ -3,6 +3,8 @@ import 'package:flutter_app/NewRoute.dart';
 import 'package:flutter_app/TipRoute.dart';
 import 'package:english_words/english_words.dart';
 
+import 'Text.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -26,6 +28,7 @@ class MyApp extends StatelessWidget {
         "tip2":(context) {
           return TipRoute(text: ModalRoute.of(context).settings.arguments);
         },
+        "TextWidget":(context)=>TextWidget(),
         //...//省略其他路由注册信息
       }
     );
@@ -85,7 +88,15 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             RandomwordsWidget(),
+            FlatButton(
+              child: Text("open TextWidget route"),
+              textColor: Colors.blue,
+              onPressed: (){
+                Navigator.pushNamed(context, "TextWidget");
+              },
+            ),
           ],
+
         ),
       ),
       floatingActionButton: FloatingActionButton(
