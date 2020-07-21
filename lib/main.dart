@@ -3,6 +3,7 @@ import 'package:flutter_app/NewRoute.dart';
 import 'package:flutter_app/TipRoute.dart';
 import 'package:english_words/english_words.dart';
 
+import 'InputAndForm.dart';
 import 'RasiseButtonWidget.dart';
 import 'SwitchAndCheckBoxTestRoute.dart';
 import 'Text.dart';
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
         "TextWidget":(context)=>TextWidget(),
         "RasiseButtonWidget":(context)=>RasiseButtonWidget(),
         "SwitchAndCheckBoxTestRoute":(context)=>SwitchAndCheckBoxTestRoute(),
+        "FormTestRoute":(context)=>FormTestRoute(),
         //...//省略其他路由注册信息
       }
     );
@@ -110,6 +112,14 @@ class _MyHomePageState extends State<MyHomePage> {
               textColor: Colors.blue,
               onPressed: (){
                 Navigator.pushNamed(context, "SwitchAndCheckBoxTestRoute");
+              },
+            ),
+
+            FlatButton(
+              child: Text("open FormTestRoute route"),
+              textColor: Colors.blue,
+              onPressed: (){
+                Navigator.pushNamed(context, "FormTestRoute");
               },
             ),
           ],
