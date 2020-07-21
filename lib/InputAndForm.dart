@@ -10,11 +10,19 @@ class _FormTestRouteState extends State<FormTestRoute> {
 
   TextEditingController _unameController = new TextEditingController();
   TextEditingController _pwdController = new TextEditingController();
+  TextEditingController _selectionController = new TextEditingController();
+
+
   GlobalKey _formKey= new GlobalKey<FormState>();
 
   @override
   void initState() {
     // TODO: implement initState
+    _selectionController.text = "hello world";
+    _selectionController.selection=TextSelection(
+        baseOffset: 2,
+        extentOffset: _selectionController.text.length
+    );
     _unameController.addListener(() {
       print("_unameControlle1r"+_unameController.text);
       print("_pwdControlle1r"+_pwdController.text);
@@ -53,6 +61,9 @@ class _FormTestRouteState extends State<FormTestRoute> {
             onChanged: (v){
               print("onChange_pwdController:$v");
             }
+          ),
+          TextField(
+            controller: _selectionController,
           ),
         ],
       )
