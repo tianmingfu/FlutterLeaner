@@ -3,6 +3,7 @@ import 'package:flutter_app/NewRoute.dart';
 import 'package:flutter_app/TipRoute.dart';
 import 'package:english_words/english_words.dart';
 
+import 'RasiseButtonWidget.dart';
 import 'Text.dart';
 
 void main() {
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
           return TipRoute(text: ModalRoute.of(context).settings.arguments);
         },
         "TextWidget":(context)=>TextWidget(),
+        "RasiseButtonWidget":(context)=>RasiseButtonWidget(),
         //...//省略其他路由注册信息
       }
     );
@@ -64,9 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-
         child: Column(
-
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
@@ -93,6 +93,14 @@ class _MyHomePageState extends State<MyHomePage> {
               textColor: Colors.blue,
               onPressed: (){
                 Navigator.pushNamed(context, "TextWidget");
+              },
+            ),
+
+            FlatButton(
+              child: Text("open RasiseButtonWidget route"),
+              textColor: Colors.blue,
+              onPressed: (){
+                Navigator.pushNamed(context, "RasiseButtonWidget");
               },
             ),
           ],
