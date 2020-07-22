@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/%E5%AF%B9%E9%BD%90%E4%B8%8E%E7%9B%B8%E5%AF%B9%E5%AE%9A%E4%BD%8D.dart';
 import 'package:flutter_app/%E5%B1%82%E5%8F%A0%E5%B8%83%E5%B1%80.dart';
 import 'package:flutter_app/%E5%BC%B9%E6%80%A7%E5%B8%83%E5%B1%80.dart';
 import 'package:flutter_app/%E6%B5%81%E5%BC%8F%E5%B8%83%E5%B1%80.dart';
@@ -46,6 +47,7 @@ class MyApp extends StatelessWidget {
           "FlexLayoutRoute": (context) => FlexLayoutRoute(),
           "WrapRouter": (context) => WrapRouter(),
           "StackPositionedRouter": (context) => StackPositionedRouter(),
+          "AlignRouter": (context) => AlignRouter(),
           //...//省略其他路由注册信息
         });
   }
@@ -61,14 +63,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,13 +73,6 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
             FlatButton(
               child: Text("open new route"),
               textColor: Colors.blue,
@@ -153,21 +140,24 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.pushNamed(context, "WrapRouter");
               },
-            ),   FlatButton(
+            ),
+            FlatButton(
               child: Text("open StackPositionedRouter route"),
               textColor: Colors.blue,
               onPressed: () {
                 Navigator.pushNamed(context, "StackPositionedRouter");
               },
             ),
+            FlatButton(
+              child: Text("open AlignRouter route"),
+              textColor: Colors.blue,
+              onPressed: () {
+                Navigator.pushNamed(context, "AlignRouter");
+              },
+            ),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
