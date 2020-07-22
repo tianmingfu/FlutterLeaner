@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/%E5%BC%B9%E6%80%A7%E5%B8%83%E5%B1%80.dart';
 import 'package:flutter_app/NewRoute.dart';
 import 'package:flutter_app/TipRoute.dart';
 import 'package:english_words/english_words.dart';
@@ -19,35 +20,35 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      initialRoute: "/",
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+        title: 'Flutter Demo',
+        initialRoute: "/",
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
 //      home: MyHomePage(title: 'Flutter Demo Home Page'),
-      //注册路由表
-      routes: {
-        "new_page":(context) => NewRoute(),
-        "/":(context) =>  MyHomePage(title: 'Flutter Demo Home Page'),
-        "tip2":(context) {
-          return TipRoute(text: ModalRoute.of(context).settings.arguments);
-        },
-        "TextWidget":(context)=>TextWidget(),
-        "RasiseButtonWidget":(context)=>RasiseButtonWidget(),
-        "SwitchAndCheckBoxTestRoute":(context)=>SwitchAndCheckBoxTestRoute(),
-        "FormTestRoute":(context)=>FormTestRoute(),
-        "FocusTestRoute":(context)=>FocusTestRoute(),
-        "ProgressRoute":(context) => ProgressRoute(),
-        //...//省略其他路由注册信息
-      }
-    );
+        //注册路由表
+        routes: {
+          "new_page": (context) => NewRoute(),
+          "/": (context) => MyHomePage(title: 'Flutter Demo Home Page'),
+          "tip2": (context) {
+            return TipRoute(text: ModalRoute.of(context).settings.arguments);
+          },
+          "TextWidget": (context) => TextWidget(),
+          "RasiseButtonWidget": (context) => RasiseButtonWidget(),
+          "SwitchAndCheckBoxTestRoute": (context) =>
+              SwitchAndCheckBoxTestRoute(),
+          "FormTestRoute": (context) => FormTestRoute(),
+          "FocusTestRoute": (context) => FocusTestRoute(),
+          "ProgressRoute": (context) => ProgressRoute(),
+          "FlexLayoutRoute": (context) => FlexLayoutRoute(),
+          //...//省略其他路由注册信息
+        });
   }
 }
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
-
 
   final String title;
 
@@ -60,17 +61,14 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _incrementCounter() {
     setState(() {
-
       _counter++;
     });
   }
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
-
         title: Text(widget.title),
       ),
       body: Center(
@@ -87,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
             FlatButton(
               child: Text("open new route"),
               textColor: Colors.blue,
-              onPressed: (){
+              onPressed: () {
                 Navigator.pushNamed(context, "new_page");
 //                Navigator.push(context,
 //                    MaterialPageRoute(builder: (context) {
@@ -99,49 +97,53 @@ class _MyHomePageState extends State<MyHomePage> {
             FlatButton(
               child: Text("open TextWidget route"),
               textColor: Colors.blue,
-              onPressed: (){
+              onPressed: () {
                 Navigator.pushNamed(context, "TextWidget");
               },
             ),
-
             FlatButton(
               child: Text("open RasiseButtonWidget route"),
               textColor: Colors.blue,
-              onPressed: (){
+              onPressed: () {
                 Navigator.pushNamed(context, "RasiseButtonWidget");
               },
             ),
             FlatButton(
               child: Text("open SwitchAndCheckBoxTestRoute route"),
               textColor: Colors.blue,
-              onPressed: (){
+              onPressed: () {
                 Navigator.pushNamed(context, "SwitchAndCheckBoxTestRoute");
               },
             ),
-
             FlatButton(
               child: Text("open FormTestRoute route"),
               textColor: Colors.blue,
-              onPressed: (){
+              onPressed: () {
                 Navigator.pushNamed(context, "FormTestRoute");
               },
             ),
             FlatButton(
               child: Text("open FocusTestRoute route"),
               textColor: Colors.blue,
-              onPressed: (){
+              onPressed: () {
                 Navigator.pushNamed(context, "FocusTestRoute");
               },
             ),
             FlatButton(
               child: Text("open ProgressRoute route"),
               textColor: Colors.blue,
-              onPressed: (){
+              onPressed: () {
                 Navigator.pushNamed(context, "ProgressRoute");
               },
             ),
+            FlatButton(
+              child: Text("open FlexLayoutRoute route"),
+              textColor: Colors.blue,
+              onPressed: () {
+                Navigator.pushNamed(context, "FlexLayoutRoute");
+              },
+            ),
           ],
-
         ),
       ),
       floatingActionButton: FloatingActionButton(
@@ -153,16 +155,15 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class RandomwordsWidget extends StatelessWidget{
+class RandomwordsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
 
-  final wordPair = new WordPair.random();
-  return Padding(
-    padding: const EdgeInsets.all(8.0),
-    child: new Text(wordPair.toString()),
-  );
+    final wordPair = new WordPair.random();
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: new Text(wordPair.toString()),
+    );
   }
-  
 }
