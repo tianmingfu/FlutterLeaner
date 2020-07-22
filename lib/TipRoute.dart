@@ -27,6 +27,44 @@ print("argsargsargsargs:"+args);
                 onPressed: ()=>Navigator.pop(context,"我是返回值"),
                 child: Text("返回"),
               ),
+              LinearProgressIndicator(
+                backgroundColor: Colors.grey[200],
+                valueColor: AlwaysStoppedAnimation(Colors.blue),
+              ),
+//进度条显示50%
+              LinearProgressIndicator(
+                backgroundColor: Colors.grey[200],
+                valueColor: AlwaysStoppedAnimation(Colors.blue),
+                value: .5,
+              ),
+              CircularProgressIndicator(
+                backgroundColor: Colors.grey[200],
+                valueColor: AlwaysStoppedAnimation(Colors.red),
+              ),
+              CircularProgressIndicator(
+                backgroundColor: Colors.grey[200],
+                valueColor: AlwaysStoppedAnimation(
+                  Colors.blue
+                ),
+                value: .5,
+              ),
+              SizedBox(
+                height: 3,
+                child: LinearProgressIndicator(
+                  backgroundColor: Colors.grey[200],
+                  valueColor: AlwaysStoppedAnimation(Colors.blue),
+                  value: .7,
+                ),
+              ),
+              SizedBox(
+                height: 100,
+                width: 100,
+                child: CircularProgressIndicator(
+                  backgroundColor: Colors.grey[200],
+                  valueColor: AlwaysStoppedAnimation(Colors.red),
+                  value: .6,
+                ),
+              )
             ],
           ),
         ),
