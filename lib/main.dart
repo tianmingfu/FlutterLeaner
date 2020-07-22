@@ -4,6 +4,7 @@ import 'package:flutter_app/TipRoute.dart';
 import 'package:english_words/english_words.dart';
 
 import 'InputAndForm.dart';
+import 'ProgressRoute.dart';
 import 'RasiseButtonWidget.dart';
 import 'SwitchAndCheckBoxTestRoute.dart';
 import 'FocusTestRoute.dart';
@@ -37,6 +38,7 @@ class MyApp extends StatelessWidget {
         "SwitchAndCheckBoxTestRoute":(context)=>SwitchAndCheckBoxTestRoute(),
         "FormTestRoute":(context)=>FormTestRoute(),
         "FocusTestRoute":(context)=>FocusTestRoute(),
+        "ProgressRoute":(context) => ProgressRoute(),
         //...//省略其他路由注册信息
       }
     );
@@ -131,7 +133,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.pushNamed(context, "FocusTestRoute");
               },
             ),
-
+            FlatButton(
+              child: Text("open ProgressRoute route"),
+              textColor: Colors.blue,
+              onPressed: (){
+                Navigator.pushNamed(context, "ProgressRoute");
+              },
+            ),
           ],
 
         ),
