@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/%E5%B1%82%E5%8F%A0%E5%B8%83%E5%B1%80.dart';
 import 'package:flutter_app/%E5%BC%B9%E6%80%A7%E5%B8%83%E5%B1%80.dart';
 import 'package:flutter_app/%E6%B5%81%E5%BC%8F%E5%B8%83%E5%B1%80.dart';
 import 'package:flutter_app/NewRoute.dart';
@@ -44,6 +45,7 @@ class MyApp extends StatelessWidget {
           "ProgressRoute": (context) => ProgressRoute(),
           "FlexLayoutRoute": (context) => FlexLayoutRoute(),
           "WrapRouter": (context) => WrapRouter(),
+          "StackPositionedRouter": (context) => StackPositionedRouter(),
           //...//省略其他路由注册信息
         });
   }
@@ -150,6 +152,12 @@ class _MyHomePageState extends State<MyHomePage> {
               textColor: Colors.blue,
               onPressed: () {
                 Navigator.pushNamed(context, "WrapRouter");
+              },
+            ),   FlatButton(
+              child: Text("open StackPositionedRouter route"),
+              textColor: Colors.blue,
+              onPressed: () {
+                Navigator.pushNamed(context, "StackPositionedRouter");
               },
             ),
           ],
