@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/TapBoxAState.dart';
-import 'package:flutter_app/TipRoute.dart';
+import 'package:flutter_app/%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6/TapBoxAState.dart';
 
-import 'ParentWidget.dart';
-import 'ParentWidgetC.dart';
+import '基础组件/ParentWidgetC.dart';
+
 
 class NewRoute extends StatelessWidget {
   
