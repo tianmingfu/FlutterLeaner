@@ -18,6 +18,7 @@ import '基础组件/Text.dart';
 import '容器类组价/ConstrainedBoxRouter.dart';
 import '容器类组价/DecoratedBoxRouter.dart';
 import '容器类组价/PaddingTestRoute.dart';
+import '容器类组价/TransformRouter.dart';
 import '容器类组价/WidgetRouter.dart';
 
 void main() {
@@ -60,6 +61,7 @@ class MyApp extends StatelessWidget {
           "PaddingTestRoute": (context) => PaddingTestRoute(),
           "ConstrainedBoxRouter": (context) => ConstrainedBoxRouter(),
           "DecoratedBoxRouter":(context) => DecoratedBoxRouter(),
+          "TransformRouter":(context) => TransformRouter(),
           //...//省略其他路由注册信息
         });
   }
