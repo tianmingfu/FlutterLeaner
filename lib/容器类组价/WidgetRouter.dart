@@ -27,8 +27,8 @@ class WidgetRouter extends StatelessWidget {
             child: Text("变换（Transform）"),
           ),
           RaisedButton(
-            onPressed: () => {},
-            child: Text(""),
+            onPressed: () => {Navigator.pushNamed(context, "ContainerRouter")},
+            child: Text("Container组件"),
           ),
           RaisedButton(
             onPressed: () => {},

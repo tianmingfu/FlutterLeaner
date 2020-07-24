@@ -16,6 +16,7 @@ import '基础组件/SwitchAndCheckBoxTestRoute.dart';
 import '基础组件/FocusTestRoute.dart';
 import '基础组件/Text.dart';
 import '容器类组价/ConstrainedBoxRouter.dart';
+import '容器类组价/ContainerRouter.dart';
 import '容器类组价/DecoratedBoxRouter.dart';
 import '容器类组价/PaddingTestRoute.dart';
 import '容器类组价/TransformRouter.dart';
@@ -62,6 +63,7 @@ class MyApp extends StatelessWidget {
           "ConstrainedBoxRouter": (context) => ConstrainedBoxRouter(),
           "DecoratedBoxRouter":(context) => DecoratedBoxRouter(),
           "TransformRouter":(context) => TransformRouter(),
+          "ContainerRouter":(context) => ContainerRouter(),
           //...//省略其他路由注册信息
         });
   }
