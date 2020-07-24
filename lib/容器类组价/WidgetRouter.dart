@@ -19,24 +19,24 @@ class WidgetRouter extends StatelessWidget {
             child: Text("ConstrainedBoxRouter"),
           ),
           RaisedButton(
-            onPressed: () => {},
-            child: Text("PaddingTestRoute"),
+            onPressed: () => {Navigator.pushNamed(context, "DecoratedBoxRouter")},
+            child: Text("DecoratedBoxRouter"),
           ),
           RaisedButton(
             onPressed: () => {},
-            child: Text("PaddingTestRoute"),
+            child: Text(""),
           ),
           RaisedButton(
             onPressed: () => {},
-            child: Text("PaddingTestRoute"),
+            child: Text(""),
           ),
           RaisedButton(
             onPressed: () => {},
-            child: Text("PaddingTestRoute"),
+            child: Text(""),
           ),
           RaisedButton(
             onPressed: () => {},
-            child: Text("PaddingTestRoute"),
+            child: Text(""),
           ),
         ],
       ),
