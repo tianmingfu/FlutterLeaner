@@ -9,6 +9,14 @@ import 'package:flutter_app/NewRoute.dart';
 import 'package:flutter_app/%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6/TipRoute.dart';
 import 'package:english_words/english_words.dart';
 
+import ' 可滚动组件/CustomScrollView.dart';
+import ' 可滚动组件/InfiniteGridView.dart';
+import ' 可滚动组件/ScrollControllerRouter.dart';
+import ' 可滚动组件/GridView.dart';
+import ' 可滚动组件/InfiniteListView.dart';
+import ' 可滚动组件/ListViewRouter.dart';
+import ' 可滚动组件/SingleChildScrollViewRouter.dart';
+import ' 可滚动组件/ScrollView.dart';
 import '基础组件/InputAndForm.dart';
 import '基础组件/ProgressRoute.dart';
 import '基础组件/RasiseButtonWidget.dart';
@@ -68,6 +76,14 @@ class MyApp extends StatelessWidget {
           "ContainerRouter":(context) => ContainerRouter(),
           "ScaffoldTabBarRouter":(context) => ScaffoldTabBarRouter(),
           "Cliprouter":(context) => Cliprouter(),
+          "Scrollview":(context) => Scrollview(),
+          "SingleChildScrollViewRouter":(context) => SingleChildScrollViewRouter(),
+          "Listviewrouter":(context) => Listviewrouter(),
+          "Infinitelistview":(context) => Infinitelistview(),
+          "Gridview":(context) => Gridview(),
+          "CustomScrollviewRoute":(context) => CustomScrollviewRoute(),
+          "ScrollControllerRoute":(context) => ScrollControllerRoute(),
+          "Infinitegridview":(context) => Infinitegridview(),
           //...//省略其他路由注册信息
         });
   }
@@ -124,6 +140,13 @@ class _MyHomePageState extends State<MyHomePage> {
               textColor: Colors.blue,
               onPressed: () {
                 Navigator.pushNamed(context, "WidgetRouter");
+              },
+            ),
+            FlatButton(
+              child: Text("open 可滚动Widget组件 route"),
+              textColor: Colors.blue,
+              onPressed: () {
+                Navigator.pushNamed(context, "Scrollview");
               },
             ),
 
