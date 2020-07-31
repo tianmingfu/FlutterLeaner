@@ -9,6 +9,14 @@ import 'package:flutter_app/NewRoute.dart';
 import 'package:flutter_app/%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6/TipRoute.dart';
 import 'package:english_words/english_words.dart';
 
+import '功能型Widget/FonctionnalWidgetRoute.dart';
+import '功能型Widget/FutureBuilderTextRoute.dart';
+import '功能型Widget/ShareData/InheritedWidgetTestRoute.dart';
+import '功能型Widget/NavRoute.dart';
+import '功能型Widget/StreamBuilderTextRoute.dart';
+import '功能型Widget/WillPopScopeTestRoute.dart';
+import '功能型Widget/ThemeTestRoute.dart';
+import '功能型Widget/对话框详解/AlertDialogRoute.dart';
 import ' 可滚动组件/CustomScrollView.dart';
 import ' 可滚动组件/InfiniteGridView.dart';
 import ' 可滚动组件/ScrollControllerRouter.dart';
@@ -84,6 +92,14 @@ class MyApp extends StatelessWidget {
           "CustomScrollviewRoute":(context) => CustomScrollviewRoute(),
           "ScrollControllerRoute":(context) => ScrollControllerRoute(),
           "Infinitegridview":(context) => Infinitegridview(),
+          "WillPopScopeTestRoute":(context) => WillPopScopeTestRoute(),
+          "Fonctionnalwidgetroute":(context) => Fonctionnalwidgetroute(),
+          "InheritedWidgetTestRoute":(context) => InheritedWidgetTestRoute(),
+          "NavRoute":(context) => NavRoute(),
+          "ThemeTestRoute":(context) => ThemeTestRoute(),
+          "FutureBuilderTextRoute":(context) => FutureBuilderTextRoute(),
+          "StreamBuilderTextRoute":(context) => StreamBuilderTextRoute(),
+          "AlertDialogRoute":(context) => AlertDialogRoute(),
           //...//省略其他路由注册信息
         });
   }
@@ -147,6 +163,19 @@ class _MyHomePageState extends State<MyHomePage> {
               textColor: Colors.blue,
               onPressed: () {
                 Navigator.pushNamed(context, "Scrollview");
+              },
+            ),
+            FlatButton(
+              child: Text("open 功能型组件 route"),
+              textColor: Colors.blue,
+              onPressed: () {
+                Navigator.pushNamed(context, "Fonctionnalwidgetroute");
+              },
+            ), FlatButton(
+              child: Text("open AlertDialogRoute route"),
+              textColor: Colors.blue,
+              onPressed: () {
+                Navigator.pushNamed(context, "AlertDialogRoute");
               },
             ),
 
