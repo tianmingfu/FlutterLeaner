@@ -22,6 +22,7 @@ class _ScrollControllerRouteState extends State<ScrollControllerRoute> {
     _controller.addListener(() {
       print("监听滚动事件，打印滚动位置${_controller.offset})");
       if (_controller.offset < 1000 && showToTopBtn) {
+
         setState(() {
           showToTopBtn = false;
         });
