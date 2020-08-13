@@ -9,6 +9,15 @@ import 'package:flutter_app/NewRoute.dart';
 import 'package:flutter_app/%E5%9F%BA%E7%A1%80%E7%BB%84%E4%BB%B6/TipRoute.dart';
 import 'package:english_words/english_words.dart';
 
+import '事件处理与通知/事件总线/LoginRoute.dart';
+import '事件处理与通知/手势/BothDirectionTestRoute.dart';
+import '事件处理与通知/手势/Drag.dart';
+import '事件处理与通知/手势/DragVertical.dart';
+import '事件处理与通知/手势/GestureConflictTestRouteState.dart';
+import '事件处理与通知/GestureDetectorTestRoute.dart';
+import '事件处理与通知/手势/GestureRecognizerTestRouteState.dart';
+import '事件处理与通知/ListenerRoute.dart';
+import '事件处理与通知/手势/ScaleTestRouteState.dart';
 import '功能型Widget/FonctionnalWidgetRoute.dart';
 import '功能型Widget/FutureBuilderTextRoute.dart';
 import '功能型Widget/ShareData/InheritedWidgetTestRoute.dart';
@@ -100,6 +109,16 @@ class MyApp extends StatelessWidget {
           "FutureBuilderTextRoute":(context) => FutureBuilderTextRoute(),
           "StreamBuilderTextRoute":(context) => StreamBuilderTextRoute(),
           "AlertDialogRoute":(context) => AlertDialogRoute(),
+          "ListenerRoute":(context) => ListenerRoute(),
+          "GestureDetectorTestRoute":(context) => GestureDetectorTestRoute(),
+          "Drag":(context) => Drag(),
+          "DragVertical":(context) => DragVertical(),
+          "ScaleTestRouteState":(context) => ScaleTestRouteState(),
+          "GestureRecognizerTestRouteState":(context) => GestureRecognizerTestRouteState(),
+          "BothDirectionTestRoute":(context) => BothDirectionTestRoute(),
+          "GestureConflictTestRouteState":(context) => GestureConflictTestRouteState(),
+          "LoginRoute":(context) => LoginRoute(),
+
           //...//省略其他路由注册信息
         });
   }
@@ -171,11 +190,19 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.pushNamed(context, "Fonctionnalwidgetroute");
               },
-            ), FlatButton(
+            ),
+            FlatButton(
               child: Text("open AlertDialogRoute route"),
               textColor: Colors.blue,
               onPressed: () {
                 Navigator.pushNamed(context, "AlertDialogRoute");
+              },
+            ),
+            FlatButton(
+              child: Text("open 事件处理与通知 route"),
+              textColor: Colors.blue,
+              onPressed: () {
+                Navigator.pushNamed(context, "ListenerRoute");
               },
             ),
 
